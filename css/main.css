@@ -40,7 +40,6 @@ body {
 .nav-link{
   text-decoration: none;
     color: rgba(42, 45, 70, 1);
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
 
@@ -52,7 +51,6 @@ color: rgb(49, 69, 255); /* синий цвет при наведении у м�
   margin-left: 25px;
   background-color: white;
   color: #ff66b2;
-  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 700;
   border: 2px solid #ff66b2;
@@ -73,7 +71,6 @@ color: rgb(49, 69, 255); /* синий цвет при наведении у м�
   display: flex;
   align-items: center;
   gap: 15px; /* расстояние между иконкой и суммой */
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   margin-left: 77px;
 

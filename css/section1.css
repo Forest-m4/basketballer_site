@@ -1,0 +1,27 @@
+.promo-row {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  padding-top: 40px;
+  align-items: flex-start; /* вверх = тест*/
+}
+
+.btn{ /* кнопочка розовая с каталогом*/
+  background-color: rgba(235, 45, 102, 1);
+  border: rgba(235, 45, 102, 1);
+  width:239px;
+  height: 63px;
+  font-size: 16px;
+  font-weight: 700;
+
+
+}
+.promo-text-block { 
+  flex: 0 0 40%;
+
+}
+.promo-text{ 
+font-weight: 900;
+  color: rgba(42, 45, 70, 1);
+  font-size: 36px;
+}
