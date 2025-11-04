@@ -23,7 +23,6 @@ body {
   margin: 0;
 }
 
-
 .nav-item_num a {
   color: rgba(42, 45, 70, 1);
   font-size: 15px; 
@@ -44,9 +43,11 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
+
 .nav-link:hover {
 color: rgb(49, 69, 255); /* синий цвет при наведении у мяча и тп*/
 }
+
 .my-btn {
   margin-left: 25px;
   background-color: white;
@@ -65,4 +66,21 @@ color: rgb(49, 69, 255); /* синий цвет при наведении у м�
 .my-btn:hover {
   background-color: #ff66b2;
   color: white;
+}
+
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* расстояние между иконкой и суммой */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-left: 77px;
+
+  }
+
+.cart-icon {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
 }
