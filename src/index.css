@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: #3145FF;
+  --color-muted: #9094b8;
+  --color-accent: #eb2d66;
+  --color-secondary: #2A2D46;
+}
+
+@utility shadow-card {
+  @apply shadow-[0_15px_30px_0_rgba(0,0,0,0.15)]
+}
+
+body {
+  @apply bg-[#fcfcff]
+}
