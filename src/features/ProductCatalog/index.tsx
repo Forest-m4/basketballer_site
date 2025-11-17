@@ -1,0 +1,41 @@
+import React from "react";
+import { products } from "../../lib/products";
+import ProductCard from "../../components/core/Card";
+import Typography from "../../components/ui/Typography";
+import { twMerge } from "tailwind-merge";
+
+export interface ProductCatalogProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+
+const ProductCatalog: React.FC<ProductCatalogProps> = ({
+  className,
+  ...props
+}) => {
+  return (
+    <div
+      {...props}
+      className={twMerge(
+        "flex flex-col gap-[50px] px-[40px]", // отступы от краёв страницы
+        className
+      )}
+    >
+      <Typography variant="25px-bold" type="h2">
+        Каталог товаров
+      </Typography>
+
+      <div
+        className="
+          flex flex-wrap 
+          gap-[80px] 
+          justify-center       // товары по центру
+        "
+      >
+        {products.map((product) => (
+          <ProductCard key={product.id} {...product} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ProductCatalog;
