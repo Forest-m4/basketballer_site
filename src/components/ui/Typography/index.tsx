@@ -18,28 +18,30 @@ const typesMapping = {
 type TypographyType = keyof typeof typesMapping;
 
 const typography = tv({
-  base: "font-montserrat", 
+  base: "font-montserrat",
   variants: {
     variant: {
-      "12px-bold":"text-[12px] font-bold",
-      "11px-regular": "text-[11px] font-normal",
-      "12px-regular": "text-[12px] font-normal",
-      "16px-regular": "text-[16px] font-normal",
-      "16px-bold": "text-[16px] font-bold",
-      "18px-semibold": "text-[18px] font-semibold",
-      "25px-bold": "text-[25px] font-bold",
-      "36px-bold": "text-[36px] font-bold",
-      "18px-medium": "text-[18px] font-medium",
+      "12-300": "text-[12px] font-light",
+      "12-400": "text-[12px] font-normal",
+      "12-700": "text-[12px] font-bold",
+      "15-400": "text-[15px] font-normal",
+      "16-700": "text-[16px] font-bold",
+      "16-900": "text-[16px] font-black",
+      "17-700": "text-[17px] font-bold",
+      "18-400": "text-[18px] font-normal",
+      "18-700": "text-[18px] font-bold",
+      "25-900": "text-[25px] font-black",
+      "36-900": "text-[36px] font-black",
+      "50-900": "text-[50px] font-black",
+      "14-400": "text-[14px] font-normal",
     },
     color: {
-      primary: "text-primary",
-      accent: "text-accent",
-      secondary: "text-secondary",
-      muted: "text-muted",
+      primary: "text-[rgba(49,69,255,1)]",
+      secondary: "text-[rgba(42,45,70,1)]",
     },
   },
   defaultVariants: {
-    variant: "12px-regular",
+    variant: "16-700",
     color: "secondary",
   },
 });

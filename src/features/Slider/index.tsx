@@ -5,8 +5,7 @@ import SliderButton from "../../components/core/SliderButton";
 import SliderTrack from "../../components/core/SliderTrack";
 
 
-const CARD_WIDTH = 20;
-const GAP = 20;
+
 const VISIBLE = 4;
 
 const Slider = () => {

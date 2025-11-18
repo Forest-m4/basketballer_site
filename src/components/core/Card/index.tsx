@@ -15,7 +15,7 @@ const ProductCard: React.FC<Product> = ({
       {/* Название по центру сверху */}
       <Typography
         type="h3"
-        variant="16px-bold"
+        variant="16-900"
         className="text-center"
       >
         {title}

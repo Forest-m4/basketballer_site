@@ -19,14 +19,14 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
         className
       )}
     >
-      <Typography variant="25px-bold" type="h2">
+      <Typography variant="25-900" type="h2">
         Каталог товаров
       </Typography>
 
       <div
         className="
           flex flex-wrap 
-          gap-[80px] 
+          gap-[30px] 
           justify-center       // товары по центру
         "
       >

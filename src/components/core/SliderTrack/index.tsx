@@ -1,5 +1,5 @@
 import ProductCard from "../../core/Card";
-import { products, type Product } from "../../../lib/products";
+import { products } from "../../../lib/products";
 
 
 const CARD_WIDTH = 260;
