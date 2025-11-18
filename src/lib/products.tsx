@@ -36,7 +36,7 @@ export const products: Product[] = [
   {
     id: 4,
     title: "Шорты баскетбольные",
-    description: "Шорты баскетбольные JBS-1120-014 свободного кроя для отличного комфорта  во время игры.",
+    description: "Шорты  JBS-1120-014 свободного кроя для отличного комфорта  во время игры.",
     price: 2299,
     discount: 400,
     imageUrl: "/images/products/shorts.jpg",

@@ -6,9 +6,9 @@ function App() {
   return (
     <>
       <HeroSection />
-      <ProductCatalog />
       <HotSection/>
       <Slider/>
+      <ProductCatalog />
     </>
   );
 }

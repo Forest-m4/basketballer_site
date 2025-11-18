@@ -1,5 +1,5 @@
-import ProductCard from "../../components/core/ProductCard";
-import { products } from "../../lib/products";
+import ProductCard from "../ProductCard";
+import { products } from "../../../lib/products";
 
 const CatalogSection = () => {
   return (

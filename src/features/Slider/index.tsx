@@ -1,45 +1,30 @@
 import { useState } from "react";
-import ProductCard from "../../components/core/ProductCard";
 import { products } from "../../lib/products";
+
+import SliderButton from "../../components/core/SliderButton";
+import SliderTrack from "../../components/core/SliderTrack";
+
+
+const CARD_WIDTH = 20;
+const GAP = 20;
+const VISIBLE = 4;
 
 const Slider = () => {
   const [index, setIndex] = useState(0);
+  const maxIndex = products.length - VISIBLE;
 
-  const next = () => {
-    if (index < products.length - 1) setIndex(index + 1);
-  };
-
-  const prev = () => {
-    if (index > 0) setIndex(index - 1);
-  };
+  const next = () => index < maxIndex && setIndex(index + 1);
+  const prev = () => index > 0 && setIndex(index - 1);
 
   return (
-    <section className="relative w-full overflow-hidden px-6 py-4">
-      <div
-        className="flex gap-6 transition-transform duration-300"
-        style={{
-          transform: 'translateX(-${index * 300}px)',
-        }}
-      >
-        {products.map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))}
+    <div className="relative w-full flex justify-center">
+      <div className="overflow-hidden w-[1100px]">
+        <SliderTrack index={index} />
       </div>
 
-      <button
-        onClick={prev}
-        className="absolute top-1/2 left-4 bg-black text-white px-4 py-2 rounded"
-      >
-        ←
-      </button>
-
-      <button
-        onClick={next}
-        className="absolute top-1/2 right-4 bg-black text-white px-4 py-2 rounded"
-      >
-        →
-      </button>
-    </section>
+      <SliderButton side="left" onClick={prev} />
+      <SliderButton side="right" onClick={next} />
+    </div>
   );
 };
 
