@@ -15,7 +15,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
     <div
       {...props}
       className={twMerge(
-        "flex flex-col gap-[50px] px-[40px]", // отступы от краёв страницы
+        "flex flex-col gap-[50px] px-[70px]", // отступы от краёв страницы
         className
       )}
     >
