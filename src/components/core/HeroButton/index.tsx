@@ -13,7 +13,7 @@ const HeroButton: React.FC<HeroButtonProps> = ({ className, children, ...props }
         className
       )}
     >
-      <Typography type="span" variant="16px-bold" className="text-white">
+      <Typography type="span" variant="16-900" className="text-white">
         {children}
       </Typography>
     </button>

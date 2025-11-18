@@ -1,4 +1,5 @@
 import { type Product } from "../../../lib/products";
+import Typography from "../../ui/Typography"; // путь к Typography
 
 interface Props {
   product: Product;
@@ -6,17 +7,24 @@ interface Props {
 
 const ProductCard: React.FC<Props> = ({ product }) => {
   return (
-    <div className="w-[260px] h-[360px] bg-white rounded-xl shadow p-4 flex flex-col">
+    <div className="w-[260px] h-[360px] bg-white rounded-xl shadow p-4 flex flex-col font-montserrat">
       <img
         src={product.imageUrl}
         alt={product.title}
         className="w-full h-[180px] object-cover rounded-md"
       />
 
-      <h3 className="font-semibold text-lg mt-3">{product.title}</h3>
-      <p className="text-sm text-gray-500">{product.description}</p>
+      <Typography type="h3" variant="16-900" className="mt-3">
+        {product.title}
+      </Typography>
 
-      <div className="mt-auto font-bold text-xl">{product.price} €</div>
+      <Typography type="p" variant="12-400" color="secondary" className="mt-1">
+        {product.description}
+      </Typography>
+
+      <Typography type="p" variant="18-700" className="mt-auto">
+        {product.price} €
+      </Typography>
     </div>
   );
 };

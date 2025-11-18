@@ -25,12 +25,12 @@ const HeroPromoCard: React.FC = () => {
 
         {/* Текст */}
         <div className="absolute z-20 left-90 top-[60px] max-w-[250px] text-left text-white">
-          <Typography type="h3" variant="16px-bold" className="text-white">
+          <Typography type="h3" variant="17-700" className="text-white">
             NIKE AIR JORDAN 1
           </Typography>
 
           <Typography
-            variant="12px-regular"
+            variant="12-400"
             type="p"
             className="mt-1 text-white"
           >
@@ -38,7 +38,7 @@ const HeroPromoCard: React.FC = () => {
           </Typography>
 
           <Typography
-            variant="12px-bold"
+            variant="12-700"
             type="span"
             className="block mt-2 text-white"
           >
