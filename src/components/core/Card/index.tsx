@@ -2,13 +2,13 @@ import React from "react";
 import { type Product } from "../../../lib/products";
 import Typography from "../../ui/Typography";
 
-const ProductCard: React.FC<Product> = ({
-  title,
-  description,
-  price,
-  discount,
-  imageUrl,
-}) => {
+interface ProductCardProps {
+  product: Product;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { title, description, price, discount, imageUrl } = product;
+
   return (
     <div className="w-[260px] bg-white rounded-lg shadow-md p-4 flex flex-col gap-3">
       

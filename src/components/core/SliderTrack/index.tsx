@@ -1,28 +1,16 @@
-import ProductCard from "../../core/Card";
-import { products } from "../../../lib/products";
-
-
-const CARD_WIDTH = 260;
-const GAP = 20;
+// components/Slider/SliderTrack.tsx
+import ProductCard from "../Card";
+import { Product } from "../../../lib/products";
 
 interface Props {
-  index: number;
+  products: Product[];
 }
 
-const SliderTrack: React.FC<Props> = ({ index }) => {
-  const offset = index * (CARD_WIDTH + GAP);
-
+const SliderTrack = ({ products }: Props) => {
   return (
-    <div
-      className="flex gap-[50px] transition-transform duration-300"
-      style={{
-        transform: 'translateX(-${offset}px)',
-      }}
-    >
+    <div className="flex snap-x snap-mandatory gap-4 w-max">
       {products.map((product) => (
-        <div key={product.id} className="shrink-0 w-[220px]">
-          <ProductCard {...product} />
-        </div>
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

@@ -15,7 +15,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
     <div
       {...props}
       className={twMerge(
-        "flex flex-col gap-[50px] px-[70px]", // отступы от краёв страницы
+        "flex flex-col gap-[50px] px-[70px]",
         className
       )}
     >
@@ -27,11 +27,11 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
         className="
           flex flex-wrap 
           gap-[30px] 
-          justify-center       // товары по центру
+          justify-center
         "
       >
         {products.map((product) => (
-          <ProductCard key={product.id} {...product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
