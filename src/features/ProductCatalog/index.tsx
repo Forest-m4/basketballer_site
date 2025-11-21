@@ -15,7 +15,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
     <div
       {...props}
       className={twMerge(
-        "flex flex-col gap-[50px] px-[70px]",
+        "flex flex-col gap-[50px] px-[80px]",
         className
       )}
     >
@@ -26,7 +26,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
       <div
         className="
           flex flex-wrap 
-          gap-[30px] 
+          gap-[40px] 
           justify-center
         "
       >
