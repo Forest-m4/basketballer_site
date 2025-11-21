@@ -1,4 +1,4 @@
-import Typography from "../../components/ui/Typography"; // поправь путь к Typography
+import Typography from "../../components/ui/Typography"; 
 
 const HotSection = () => {
   return (

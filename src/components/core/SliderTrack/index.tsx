@@ -1,4 +1,3 @@
-// components/Slider/SliderTrack.tsx
 import ProductCard from "../Card";
 import { Product } from "../../../lib/products";
 

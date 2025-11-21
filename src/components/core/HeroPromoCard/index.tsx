@@ -7,7 +7,6 @@ const HeroPromoCard: React.FC = () => {
       {/* Фон с градиентом */}
       <PromoBackground imageSrc="/images/products/back.jpg" />
 
-      {/* Контейнер для кроссовка и текста */}
       <div className="absolute inset-0 flex items-end justify-end px-[20px] pb-[20px]">
         {/* Кроссовок */}
         <img
