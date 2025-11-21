@@ -1,5 +1,5 @@
 import Typography from "../../../components/ui/Typography";
-import HeroButton from "../HeroButton";
+import HeroButton from "../../ui/HeroButton";
 
 const HeroText: React.FC = () => {
   return (
@@ -8,12 +8,12 @@ const HeroText: React.FC = () => {
         Оригинальные и дешёвые товары для спортсменов
       </Typography>
 
-      <Typography variant="18-400" color="secondary" >
+      <Typography variant="18-400" color="secondary">
         Мы собрали настоящие вещи от лучших брендов, чтобы порадовать вас
         качественным товаром.
       </Typography>
 
-      <HeroButton>
+      <HeroButton textColor="white">
         Смотреть каталог
       </HeroButton>
     </div>
