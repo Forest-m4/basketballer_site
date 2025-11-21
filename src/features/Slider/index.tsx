@@ -1,4 +1,3 @@
-// components/Slider/Slider.tsx
 import SliderContainer from "../../components/core/SliderContainer";
 import SliderTrack from "../../components/core/SliderTrack";
 import SliderArrows from "../../components/core/SliderArrows";
