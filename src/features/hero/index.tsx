@@ -9,7 +9,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className, ...props }) => {
     <section
       {...props}
       className={twMerge(
-        "w-full flex justify-between items-center py-20 px-[30px]",
+        "w-full py-20 px-[40px] flex justify-between items-center",
         className
       )}
     >
