@@ -7,11 +7,13 @@ import { twMerge } from "tailwind-merge";
 interface HeaderSectionProps {
   bgColor: "white" | "secondary";
   textColor?: "white" | "secondary";
+  logoTitleColor?: "primary" | "secondary" | "black" | "accent" | "white"; // переименовал для ясности
 }
 
 const HeaderSection: React.FC<HeaderSectionProps> = ({
   bgColor,
   textColor = "secondary",
+  logoTitleColor
 }) => {
   const verticalPadding = bgColor === "secondary" ? "py-16" : "py-2";
 
@@ -25,7 +27,10 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
       )}
     >
       <div className="mx-auto flex items-center gap-10" style={{ padding: "0 80px" }}>
-        <HeaderLogo textColor={textColor} />
+        <HeaderLogo 
+          textColor={textColor} // цвет для подзаголовка
+          titleColor={logoTitleColor} // цвет для "БАСКЕТБОЛЕР"
+        />
         <HeaderNav textColor={textColor} />
         <HeaderCart textColor={textColor} />
       </div>

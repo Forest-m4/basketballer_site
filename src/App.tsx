@@ -16,14 +16,15 @@ function App() {
         path="/"
         element={
           <>
-            <Header bgColor="white" textColor="secondary" />
+            <Header bgColor="white" logoTitleColor="primary" />
             <HeroSection />
             <HotSection />
             <Slider />
             <NewsSection />
             <ProductCatalog />
             <FeatureSection />
-            <Header bgColor="secondary" textColor="white" />
+            <Header bgColor="secondary" textColor="white" />\
+
           </>
         }
       />
