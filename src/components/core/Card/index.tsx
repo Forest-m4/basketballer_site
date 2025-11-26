@@ -1,6 +1,7 @@
 import React from "react";
 import { type Product } from "../../../lib/products";
 import Typography from "../../ui/Typography";
+import ArrowIcon from "../ArrowIcon";
 
 interface ProductCardProps {
   product: Product;
@@ -10,17 +11,19 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { title, description, price, discount, imageUrl } = product;
 
   return (
-    <div className="w-[260px] bg-white rounded-lg shadow-md p-4 flex flex-col gap-3">
+    <div className="w-[260px] bg-white rounded-lg shadow-md p-2 flex flex-col gap-1">
+      <div className="pt-4"></div>
       
       <Typography
         type="h3"
         variant="16-900"
+        color="black"
         className="text-center"
       >
         {title}
       </Typography>
 
-      <div className="w-full h-[200px] flex justify-center items-center rounded-md overflow-hidden">
+      <div className="w-full h-[190px] flex justify-center items-center rounded-md overflow-hidden mb-3">
         <img
           src={imageUrl}
           alt={title}
@@ -28,17 +31,40 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         />
       </div>
 
-      <p className="text-sm text-gray-600 text-center">
+      <Typography
+        type="p"
+        variant="14-400"
+        color="secondary"
+        className="text-center"
+      >
         {description}
-      </p>
+      </Typography>
 
-      <div className="flex flex-col items-center gap-1 mt-auto">
+      <div className="relative flex justify-between items-end mt-auto mb-6 px-4 pt-12"> 
         {discount && (
-          <span className="text-black-500 text-sm line-through opacity-80">
-            {price + discount} ₽
-          </span>
+          <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 pt-10"> 
+            <Typography
+              type="span"
+              variant="14-400"
+              color="black"
+              className="line-through opacity-80"
+            >
+              {price + discount} ₽
+            </Typography>
+          </div>
         )}
-        <span className="font-bold text-[18px] text-blue-500">{price} ₽</span>
+        
+        <div className="flex flex-col gap-1">
+          <Typography
+            type="span"
+            variant="18-700"
+            color="primary"
+          >
+            {price} ₽
+          </Typography>
+        </div>
+        
+        <ArrowIcon color="#EC4899" width={32} height={22} direction="right" />
       </div>
     </div>
   );

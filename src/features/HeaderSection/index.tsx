@@ -28,8 +28,8 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
     >
       <div className="mx-auto flex items-center gap-10" style={{ padding: "0 80px" }}>
         <HeaderLogo 
-          textColor={textColor} // цвет для подзаголовка
-          titleColor={logoTitleColor} // цвет для "БАСКЕТБОЛЕР"
+          textColor={textColor} 
+          titleColor={logoTitleColor} 
         />
         <HeaderNav textColor={textColor} />
         <HeaderCart textColor={textColor} />

@@ -20,7 +20,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = ({
         <Typography
           type="h1"
           variant="12-700"
-          color={titleColor || textColor} // Используем titleColor если передан, иначе textColor
+          color={titleColor || textColor}
           className="m-0 leading-[1.3]"
         >
           БАСКЕТБОЛЕР
@@ -28,7 +28,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = ({
         <Typography
           type="p"
           variant="12-400"
-          color={textColor} // Всегда используем textColor для подзаголовка
+          color={textColor} 
           className="m-0 leading-[1.3]"
         >
           Магазин баскетбольных товаров
