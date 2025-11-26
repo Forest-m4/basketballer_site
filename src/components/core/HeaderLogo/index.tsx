@@ -2,9 +2,13 @@ import Typography from "../../../components/ui/Typography";
 
 interface HeaderLogoProps {
   textColor?: "primary" | "secondary" | "black" | "accent" | "white";
+  titleColor?: "primary" | "secondary" | "black" | "accent" | "white";
 }
 
-const HeaderLogo: React.FC<HeaderLogoProps> = ({ textColor = "primary" }) => {
+const HeaderLogo: React.FC<HeaderLogoProps> = ({ 
+  textColor = "primary", 
+  titleColor 
+}) => {
   return (
     <div className="flex items-center gap-3 flex-shrink-0">
       <img
@@ -16,7 +20,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = ({ textColor = "primary" }) => {
         <Typography
           type="h1"
           variant="12-700"
-          color={textColor}
+          color={titleColor || textColor} // Используем titleColor если передан, иначе textColor
           className="m-0 leading-[1.3]"
         >
           БАСКЕТБОЛЕР
@@ -24,7 +28,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = ({ textColor = "primary" }) => {
         <Typography
           type="p"
           variant="12-400"
-          color={textColor}
+          color={textColor} // Всегда используем textColor для подзаголовка
           className="m-0 leading-[1.3]"
         >
           Магазин баскетбольных товаров
