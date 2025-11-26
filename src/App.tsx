@@ -12,7 +12,6 @@ import RegisterPage from "./features/RegisterPage"
 function App() {
   return (
     <Routes>
-      {/* Главная страница */}
       <Route
         path="/"
         element={
@@ -28,8 +27,6 @@ function App() {
           </>
         }
       />
-
-      {/* Страница логина */}
       <Route
         path="/login"
         element={<LoginPage />}
