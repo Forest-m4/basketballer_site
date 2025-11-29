@@ -16,7 +16,7 @@ const HeaderNavItem: React.FC<HeaderNavItemProps> = ({
         type="a"
         variant="14-400"
         color={textColor}
-        className="cursor-pointer transition-colors duration-200 hover:text-primary"
+        className="cursor-pointer transition-colors duration-200 hover:text-[#3145ff]"
       >
         {text}
       </Typography>

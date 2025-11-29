@@ -41,9 +41,9 @@ const typography = tv({
     color: {
       primary: "text-primary",
       secondary: "text-secondary",
-      black: "text-black",
       accent: "text-accent",
-      white: "text-white",
+      black: "text-customBlack",
+      white: "text-customWhite",
     },
   },
 

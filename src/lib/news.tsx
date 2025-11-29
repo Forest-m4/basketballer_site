@@ -1,14 +1,20 @@
 import { NewsCardProps } from "../components/core/NewsCard";
 
-export const newsData: NewsCardProps[] = [
+type NewsDataItem = NewsCardProps & {
+  id: number;
+};
+
+export const newsData: NewsDataItem[] = [
   {
+    id: 1,
     image: "/images/products/jump.jpg",
     mainText: "Поступление новых кроссовок",
-    subText: "Air jordan снова в моде!",
+    subText: "AIT JORDAN снова в моде!",
     colorOverlay: "blue",
     showPlus: true,
   },
   {
+    id: 2, // ВТОРАЯ КАРТОЧКА!
     image: "/images/products/human.jpg",
     mainText: "Наконец-то ADIDAS постарался",
     subText: "ADIDAS выпустила мяч для любого покрытия!",

@@ -3,10 +3,10 @@ import PromoText from "../PromoText";
 
 const HeroPromoCard: React.FC = () => {
   return (
-    <div className="relative w-[615px] h-[369px] ml-auto mr-[40px]">
+    <div className="relative w-[615px] h-[369px] ml-auto mr-10">
       <PromoBackground imageSrc="/images/products/back.jpg" />
 
-      <div className="absolute inset-0 flex items-end justify-end px-[20px] pb-[20px]">
+      <div className="absolute inset-0 flex items-end justify-end px-5 pb-5">
         <img
           src="/images/products/cross2.png"
           alt="кроссовки"

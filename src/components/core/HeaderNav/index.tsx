@@ -9,7 +9,7 @@ interface HeaderNavProps {
 
 const HeaderNav: React.FC<HeaderNavProps> = ({ textColor = "secondary" }) => {
   return (
-    <ul className="flex gap-16 items-center flex-grow justify-center list-none p-0 m-0">
+    <ul className="flex gap-12 items-center grow justify-center list-none p-0 m-0">
       <HeaderNavItem text="Мячи" textColor={textColor} />
       <HeaderNavItem text="Кроссовки" textColor={textColor} />
       <HeaderNavItem text="Майки" textColor={textColor} />

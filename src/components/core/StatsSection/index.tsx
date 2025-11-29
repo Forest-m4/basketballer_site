@@ -1,13 +1,27 @@
+// components/core/StatsSection/StatsSection.tsx
 import StatCard from "../StatCard";
 
+interface StatItem {
+  number: string;
+  label: string;
+}
 
-const StatsSection: React.FC = () => {
+interface StatsSectionProps {
+  stats: StatItem[];
+  className?: string;
+}
+
+const StatsSection: React.FC<StatsSectionProps> = ({
+  stats,
+  className = "",
+}) => {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-20">
-      <StatCard number="65" label="филиалов по всей стране" />
-      <StatCard number="379" label="товаров в каталоге" />
-      <StatCard number="4569" label="покупателей" />
-      <StatCard number="12" label="часов доставка по городам" />
+    <div
+      className={`flex flex-wrap justify-center items-center gap-20 ${className}`}
+    >
+      {stats.map((stat, index) => (
+        <StatCard key={index} number={stat.number} label={stat.label} />
+      ))}
     </div>
   );
 };
