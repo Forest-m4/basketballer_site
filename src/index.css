@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* 🎨 Цвета через @theme — новый формат Tailwind */
 @theme {
   --color-primary: #3145ff;
   --color-secondary: #2a2d46;
@@ -9,13 +8,11 @@
   --color-back: #343a62;
 }
 
-/* 🔵 Фон страницы */
 body {
   @apply bg-[#fcfcff];
   font-family: "Montserrat", sans-serif;
 }
 
-/* 🎯 Скрытие стандартного скроллбара */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;

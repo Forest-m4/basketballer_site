@@ -4,10 +4,10 @@ import StatsSection from "../../components/core/StatsSection";
 
 const FeatureSection: React.FC = () => {
   const statsData = [
-    { number: "65", label: "филиалов по всей стране" },
-    { number: "379", label: "товаров в каталоге" },
-    { number: "4569", label: "покупателей" },
-    { number: "12", label: "часов доставка по городам" },
+    { id: 1, number: "65", label: "филиалов по всей стране" },
+    { id: 2, number: "379", label: "товаров в каталоге" },
+    { id: 3, number: "4569", label: "покупателей" },
+    { id: 4, number: "12", label: "часов доставка по городам" },
   ];
 
   return (

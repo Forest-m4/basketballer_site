@@ -44,7 +44,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </Typography>
       </div>
 
-      {/* Блок с ценами с фиксированной высотой */}
       <div className="relative flex justify-between items-end mt-auto mb-6 px-6 h-[60px]">
         {discount && (
           <div className="absolute left-1/2 top-4 transform -translate-x-1/2 -translate-y-1/2">

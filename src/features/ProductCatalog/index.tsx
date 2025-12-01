@@ -1,6 +1,6 @@
 import React from "react";
 import { products } from "../../lib/products";
-import ProductCard from "../../components/core/Card";
+import ProductCard from "../../components/core/ProductCard";
 import Typography from "../../components/ui/Typography";
 import { twMerge } from "tailwind-merge";
 

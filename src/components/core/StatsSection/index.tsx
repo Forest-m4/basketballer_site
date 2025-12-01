@@ -2,6 +2,7 @@
 import StatCard from "../StatCard";
 
 interface StatItem {
+  id: string | number; // добавляем id
   number: string;
   label: string;
 }
@@ -19,8 +20,8 @@ const StatsSection: React.FC<StatsSectionProps> = ({
     <div
       className={`flex flex-wrap justify-center items-center gap-20 ${className}`}
     >
-      {stats.map((stat, index) => (
-        <StatCard key={index} number={stat.number} label={stat.label} />
+      {stats.map((stat) => (
+        <StatCard key={stat.id} number={stat.number} label={stat.label} />
       ))}
     </div>
   );

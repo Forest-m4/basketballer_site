@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderSection from "../features/HeaderSection";
-import Footer from "../features/FooterSection";
+import FooterSection from "../features/FooterSection";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
       <main className={newLocal}>{children}</main>
 
-      <Footer />
+      <FooterSection />
     </div>
   );
 };
