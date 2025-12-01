@@ -6,11 +6,7 @@
   --color-secondary: #2a2d46;
   --color-accent: #eb2d66;
   --color-muted: #9094b8;
-}
-
-/* ⭐ Кастомная утилита */
-@utility shadow-card {
-  @apply shadow-[0_15px_30px_0_rgba(0,0,0,0.15)];
+  --color-back: #343a62;
 }
 
 /* 🔵 Фон страницы */

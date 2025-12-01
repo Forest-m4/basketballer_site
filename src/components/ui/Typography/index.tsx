@@ -46,6 +46,7 @@ const typography = tv({
       accent: "text-accent",
       black: "text-customBlack",
       white: "text-customWhite",
+      back: "text-back", // ← добавляем новый цвет
     },
   },
 

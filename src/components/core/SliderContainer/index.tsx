@@ -56,7 +56,6 @@ const SliderContainer = ({ children, sliderRef }: Props) => {
         {children}
       </div>
 
-      {/* Скрытые интерактивные элементы для доступности */}
       <button
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
