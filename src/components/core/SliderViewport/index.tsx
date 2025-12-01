@@ -24,7 +24,7 @@ const SliderTrack = ({ items }: Props) => {
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const track = trackRef.current;
     if (!track) return;
-    const value = parseInt(e.target.value);
+    const value = Number.parseInt(e.target.value, 10); // Используем Number.parseInt
     const maxScroll = track.scrollWidth - track.clientWidth;
     track.scrollTo({ left: (maxScroll * value) / 100, behavior: "smooth" });
   };
