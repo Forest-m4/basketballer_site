@@ -14,7 +14,7 @@ export const newsData: NewsDataItem[] = [
     showPlus: true,
   },
   {
-    id: 2, // ВТОРАЯ КАРТОЧКА!
+    id: 2,
     image: "/images/products/human.jpg",
     mainText: "Наконец-то ADIDAS постарался",
     subText: "ADIDAS выпустила мяч для любого покрытия!",

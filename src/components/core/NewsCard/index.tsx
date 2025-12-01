@@ -18,8 +18,10 @@ const NewsCard: React.FC<NewsCardProps> = ({
   colorOverlay = "blue",
   showPlus = false,
 }) => {
+  const newLocal =
+    "relative w-[567px] h-[469px] shrink-0 rounded-md overflow-hidden";
   return (
-    <div className="relative w-[567px] h-[469px] shrink-0 rounded-md overflow-hidden">
+    <div className={newLocal}>
       <div className="absolute top-71 left-8 z-20">
         <SmallSquare size="lg" />
       </div>

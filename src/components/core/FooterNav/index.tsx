@@ -17,7 +17,7 @@ const FooterNav: React.FC<FooterNavProps> = ({ textColor = "secondary" }) => {
   };
 
   return (
-    <ul className="flex gap-12 items-center grow justify-center list-none p-0 m-0">
+    <ul className="flex gap-12 items-center grow justify-center list-none p-0 m-0 -translate-x-">
       <HeaderNavItem text="Мячи" textColor={textColor} />
       <HeaderNavItem text="Кроссовки" textColor={textColor} />
       <HeaderNavItem text="Майки" textColor={textColor} />
@@ -27,7 +27,7 @@ const FooterNav: React.FC<FooterNavProps> = ({ textColor = "secondary" }) => {
       <li>
         <button
           onClick={handleScrollToTop}
-          className="cursor-pointer hover:opacity-70 transition-opacity duration-200 p-0 border-none bg-transparent"
+          className="cursor-pointer hover:opacity-70 transition-opacity duration-200 p-0 border-none bg-transparent ml-10"
           title="Наверх"
           aria-label="Прокрутить страницу наверх"
         >
@@ -40,8 +40,15 @@ const FooterNav: React.FC<FooterNavProps> = ({ textColor = "secondary" }) => {
         </button>
       </li>
 
-      <HeaderPhone textColor={textColor} />
-      <HeaderButton />
+      {/* Добавляем такой же отступ для телефона */}
+      <li className="ml-14">
+        <HeaderPhone textColor={textColor} />
+      </li>
+
+      {/* Такой же отступ для кнопки */}
+      <li className="ml-14">
+        <HeaderButton />
+      </li>
     </ul>
   );
 };

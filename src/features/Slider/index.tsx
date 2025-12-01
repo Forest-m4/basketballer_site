@@ -11,7 +11,8 @@ const Slider = () => {
     <div className="w-full flex flex-col gap-2">
       <div className="relative w-full">
         <SliderArrows sliderRef={sliderRef} />
-        <SliderContainer sliderRef={sliderRef}>
+        <SliderContainer ref={sliderRef}>
+          {" "}
           <SliderTrack products={products} />
         </SliderContainer>
       </div>
