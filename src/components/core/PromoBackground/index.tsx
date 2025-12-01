@@ -6,7 +6,10 @@ interface PromoBackgroundProps {
   className?: string;
 }
 
-const PromoBackground: React.FC<PromoBackgroundProps> = ({ imageSrc, className }) => {
+const PromoBackground: React.FC<PromoBackgroundProps> = ({
+  imageSrc,
+  className,
+}) => {
   return (
     <div className={`relative w-full h-full ${className}`}>
       <img

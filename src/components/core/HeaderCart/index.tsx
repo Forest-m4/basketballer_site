@@ -7,10 +7,13 @@ interface Props {
 
 const HeaderCart: React.FC<Props> = ({ textColor = "secondary" }) => {
   return (
-    <a href="/login" className="flex items-center gap-3 flex-shrink-0 hover:opacity-80 transition-opacity">
+    <a
+      href="/login"
+      className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity"
+    >
       <img src="/images/ui/store.png" alt="Корзина" className="w-[29px]" />
       <Typography type="span" variant="14-700" color={textColor}>
-        3243 ₽
+        3243 руб.
       </Typography>
     </a>
   );

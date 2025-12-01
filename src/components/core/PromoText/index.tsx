@@ -7,9 +7,16 @@ interface PromoTextProps {
   className?: string;
 }
 
-const PromoText: React.FC<PromoTextProps> = ({ title, description, price, className }) => {
+const PromoText: React.FC<PromoTextProps> = ({
+  title,
+  description,
+  price,
+  className,
+}) => {
   return (
-    <div className={`absolute z-20 left-90 top-[60px] max-w-[250px] text-left text-white ${className}`}>
+    <div
+      className={`absolute z-20 left-90 top-[60px] max-w-[250px] text-left text-white ${className}`}
+    >
       <Typography type="h3" variant="17-700" color="white">
         {title}
       </Typography>
@@ -18,7 +25,12 @@ const PromoText: React.FC<PromoTextProps> = ({ title, description, price, classN
         {description}
       </Typography>
 
-      <Typography variant="12-700" type="span" color="white" className="block mt-2">
+      <Typography
+        variant="12-700"
+        type="span"
+        color="white"
+        className="block mt-2"
+      >
         {price}
       </Typography>
     </div>

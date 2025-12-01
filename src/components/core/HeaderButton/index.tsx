@@ -6,14 +6,15 @@ const HeaderButton: React.FC = () => {
   return (
     <li>
       <HeroButton
-        className="w-[140px] h-[30px] bg-transparent border border-accent hover:bg-accent group"
-        color="accent"
+        size="header"
+        variant="outline"
+        buttonColor="accent"
+        className="[&>span]:text-inherit"
       >
-        <Typography 
-          type="span" 
-          variant="14-700" 
-          color="accent" 
-          className="group-hover:text-white transition-colors"
+        <Typography
+          variant="11-700"
+          color="accent"
+          className="hover:text-white"
         >
           Заказать звонок
         </Typography>

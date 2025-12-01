@@ -1,3 +1,4 @@
+import React from "react";
 import Typography from "../../../components/ui/Typography";
 
 interface HeaderLogoProps {
@@ -5,12 +6,12 @@ interface HeaderLogoProps {
   titleColor?: "primary" | "secondary" | "black" | "accent" | "white";
 }
 
-const HeaderLogo: React.FC<HeaderLogoProps> = ({ 
-  textColor = "primary", 
-  titleColor 
+const HeaderLogo: React.FC<HeaderLogoProps> = ({
+  textColor = "primary",
+  titleColor,
 }) => {
   return (
-    <div className="flex items-center gap-3 flex-shrink-0">
+    <div className="flex items-center gap-3 shrink-0">
       <img
         src="/images/ui/logo.png"
         alt="Basketballer logo"
@@ -28,7 +29,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = ({
         <Typography
           type="p"
           variant="12-400"
-          color={textColor} 
+          color={textColor}
           className="m-0 leading-[1.3]"
         >
           Магазин баскетбольных товаров

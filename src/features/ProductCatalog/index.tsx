@@ -4,8 +4,7 @@ import ProductCard from "../../components/core/Card";
 import Typography from "../../components/ui/Typography";
 import { twMerge } from "tailwind-merge";
 
-export interface ProductCatalogProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type ProductCatalogProps = React.HTMLAttributes<HTMLDivElement>;
 
 const ProductCatalog: React.FC<ProductCatalogProps> = ({
   className,
@@ -14,10 +13,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
   return (
     <div
       {...props}
-      className={twMerge(
-        "flex flex-col gap-[50px] px-[80px]",
-        className
-      )}
+      className={twMerge("flex flex-col gap-[50px] px-20", className)}
     >
       <Typography variant="25-900" type="h2">
         Каталог товаров
@@ -26,7 +22,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
       <div
         className="
           flex flex-wrap 
-          gap-[40px] 
+          gap-10 
           justify-center
         "
       >

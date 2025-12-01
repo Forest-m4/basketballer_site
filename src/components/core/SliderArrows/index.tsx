@@ -1,9 +1,16 @@
-const SliderArrows = () => {
-  const scroll = (direction: "left" | "right") => {
-    const slider = document.getElementById("slider-scroll-element");
-    if (!slider) return;
+import React from "react";
 
+interface SliderArrowsProps {
+  sliderRef: React.RefObject<HTMLDivElement | null>;
+}
+
+const SliderArrows = ({ sliderRef }: SliderArrowsProps) => {
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+
+    const slider = sliderRef.current;
     const amount = 300;
+
     slider.scrollTo({
       left:
         direction === "left"
@@ -18,9 +25,10 @@ const SliderArrows = () => {
       <button
         onClick={() => scroll("left")}
         className="absolute top-1/2 -translate-y-1/2 
-        bg-white/80 backdrop-blur px-4 py-4 shadow rounded-full 
-        hover:bg-white text-3xl font-bold select-none z-10
-        left-15"  
+        bg-white/80 backdrop-blur px-4 py-2 rounded-full 
+        hover:bg-white text-5xl font-light select-none z-10
+        left-15"
+        aria-label="Scroll left"
       >
         &lt;
       </button>
@@ -28,9 +36,10 @@ const SliderArrows = () => {
       <button
         onClick={() => scroll("right")}
         className="absolute top-1/2 -translate-y-1/2 
-        bg-white/80 backdrop-blur px-4 py-4 shadow rounded-full 
-        hover:bg-white text-3xl font-bold select-none z-10
-        right-15"  
+        bg-white/80 backdrop-blur px-4 py-2 rounded-full 
+        hover:bg-white text-5xl font-light select-none z-10
+        right-15"
+        aria-label="Scroll right"
       >
         &gt;
       </button>

@@ -1,30 +1,30 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
+  sliderRef: React.RefObject<HTMLDivElement | null>;
 }
 
-const SliderContainer = ({ children }: Props) => {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  let isDown = false;
-  let startX = 0;
-  let scrollLeft = 0;
+const SliderContainer = ({ children, sliderRef }: Props) => {
+  const [isDown, setIsDown] = useState(false);
+  const startXRef = useRef(0);
+  const scrollLeftRef = useRef(0);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!sliderRef.current) return;
     const slider = sliderRef.current;
 
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+    setIsDown(true);
+    startXRef.current = e.pageX - slider.offsetLeft;
+    scrollLeftRef.current = slider.scrollLeft;
   };
 
   const handleMouseLeave = () => {
-    isDown = false;
+    setIsDown(false);
   };
 
   const handleMouseUp = () => {
-    isDown = false;
+    setIsDown(false);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -33,27 +33,50 @@ const SliderContainer = ({ children }: Props) => {
 
     const slider = sliderRef.current;
     const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1;
-    slider.scrollLeft = scrollLeft - walk;
+    const walk = (x - startXRef.current) * 1;
+    slider.scrollLeft = scrollLeftRef.current - walk;
   };
 
   return (
     <div
-      ref={sliderRef}
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-      className="overflow-x-scroll cursor-grab active:cursor-grabbing px-1"
-      style={{
-        overflowY: "hidden",
-        width: "80%",          
-        margin: "0 auto",     
-        paddingBottom: 28,    
-      }}
-      id="slider-scroll-element"
+      role="application"
+      aria-label="Content slider container"
+      className="w-full"
     >
-      {children}
+      <div
+        ref={sliderRef}
+        className="overflow-x-scroll cursor-grab active:cursor-grabbing px-1"
+        style={{
+          overflowY: "hidden",
+          width: "80%",
+          margin: "0 auto",
+          paddingBottom: 28,
+        }}
+      >
+        {children}
+      </div>
+
+      {/* Скрытые интерактивные элементы для доступности */}
+      <button
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        aria-hidden="true"
+        tabIndex={-1}
+        style={{
+          position: "absolute",
+          width: "80%",
+          height: "100%",
+          opacity: 0,
+          cursor: "grab",
+          margin: "0 auto",
+          left: "10%",
+          right: "10%",
+          top: 0,
+        }}
+        className="active:cursor-grabbing"
+      />
     </div>
   );
 };

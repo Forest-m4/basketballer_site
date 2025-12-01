@@ -1,12 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {
-      fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
-      },
-    },
-  },
-  plugins: [],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
