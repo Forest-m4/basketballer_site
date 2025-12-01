@@ -1,5 +1,6 @@
 import React from "react";
 import HeroButton from "../../ui/HeroButton";
+import Typography from "../../ui/Typography";
 
 const HeaderButton: React.FC = () => {
   return (
@@ -8,9 +9,15 @@ const HeaderButton: React.FC = () => {
         size="header"
         variant="outline"
         buttonColor="accent"
-        className="group"
+        className="[&>span]:text-inherit"
       >
-        Заказать звонок
+        <Typography
+          variant="11-700"
+          color="accent"
+          className="hover:text-white"
+        >
+          Заказать звонок
+        </Typography>
       </HeroButton>
     </li>
   );

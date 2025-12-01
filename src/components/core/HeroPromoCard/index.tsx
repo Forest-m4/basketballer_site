@@ -1,5 +1,6 @@
 import PromoBackground from "../PromoBackground";
 import PromoText from "../PromoText";
+import Rectangle from "../../core/Rectangle";
 
 const HeroPromoCard: React.FC = () => {
   return (
@@ -19,6 +20,27 @@ const HeroPromoCard: React.FC = () => {
           price="5780 руб."
           className="absolute left-6 top-6"
         />
+
+        <div className="absolute bottom-7 right-13 flex gap-4 z-20">
+          <Rectangle
+            opacity={0.5}
+            width="w-10"
+            height="h-2"
+            className="rounded-none!"
+          />
+          <Rectangle
+            opacity={1}
+            width="w-10"
+            height="h-2"
+            className="rounded-none!"
+          />
+          <Rectangle
+            opacity={0.5}
+            width="w-10"
+            height="h-2"
+            className="rounded-none!"
+          />
+        </div>
       </div>
     </div>
   );

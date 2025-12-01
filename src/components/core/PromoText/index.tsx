@@ -26,7 +26,7 @@ const PromoText: React.FC<PromoTextProps> = ({
       </Typography>
 
       <Typography
-        variant="14-700"
+        variant="12-700"
         type="span"
         color="white"
         className="block mt-2"

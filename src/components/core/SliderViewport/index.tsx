@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export interface SliderItem {
-  id: string | number; // <- теперь id может быть числом
+  id: string | number;
   content: React.ReactNode;
 }
 
@@ -21,19 +21,28 @@ const SliderTrack = ({ items }: Props) => {
     setScrollProgress(progress);
   };
 
-  const handleThumbDrag = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const track = trackRef.current;
-    const progressBar = e.currentTarget.parentElement;
-    if (!track || !progressBar) return;
-
-    const progressBarRect = progressBar.getBoundingClientRect();
+    if (!track) return;
+    const value = parseInt(e.target.value);
     const maxScroll = track.scrollWidth - track.clientWidth;
+    track.scrollTo({ left: (maxScroll * value) / 100, behavior: "smooth" });
+  };
+
+  const handleThumbDrag = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const startX = e.clientX;
+    const startScroll = track.scrollLeft;
 
     const moveThumb = (moveEvent: MouseEvent) => {
-      let newX = moveEvent.clientX - progressBarRect.left;
-      newX = Math.max(0, Math.min(newX, progressBarRect.width));
-      const percentage = newX / progressBarRect.width;
-      track.scrollLeft = maxScroll * percentage;
+      const deltaX = moveEvent.clientX - startX;
+      const trackWidth = track.clientWidth;
+      const percentageDelta = (deltaX / trackWidth) * 100;
+      const newScroll = startScroll + (maxScroll * percentageDelta) / 100;
+      track.scrollLeft = Math.max(0, Math.min(newScroll, maxScroll));
     };
 
     const stopDrag = () => {
@@ -43,32 +52,6 @@ const SliderTrack = ({ items }: Props) => {
 
     document.addEventListener("mousemove", moveThumb);
     document.addEventListener("mouseup", stopDrag);
-  };
-
-  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const progressBarRect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - progressBarRect.left;
-    const percentage = clickX / progressBarRect.width;
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    track.scrollTo({ left: maxScroll * percentage, behavior: "smooth" });
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const maxScroll = track.scrollWidth - track.clientWidth;
-
-    if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-      track.scrollBy({ left: 20, behavior: "smooth" });
-    } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-      track.scrollBy({ left: -20, behavior: "smooth" });
-    } else if (e.key === "Home") {
-      track.scrollTo({ left: 0, behavior: "smooth" });
-    } else if (e.key === "End") {
-      track.scrollTo({ left: maxScroll, behavior: "smooth" });
-    }
   };
 
   useEffect(() => {
@@ -88,20 +71,24 @@ const SliderTrack = ({ items }: Props) => {
         ))}
       </div>
 
-      <div
-        className="mt-6 mx-auto w-64 h-2 bg-gray-200 rounded relative cursor-pointer"
-        onClick={handleProgressClick}
-      >
-        <div
-          role="slider"
-          aria-valuenow={Math.round(scrollProgress)}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          tabIndex={0}
-          className="absolute top-0 w-6 h-6 bg-gray-500 rounded-sm transform -translate-y-1/2 cursor-grab active:cursor-grabbing"
-          style={{ left: "calc(${scrollProgress}% - 12px)" }}
+      {/* Нативный input range для управления скроллом */}
+      <div className="mt-6 mx-auto w-64">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={scrollProgress}
+          onChange={handleSliderChange}
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+          aria-label="Slider to control horizontal scroll"
+        />
+
+        {/* Дополнительная кнопка для перетаскивания (опционально) */}
+        <button
+          type="button"
+          className="mt-2 mx-auto block w-6 h-6 bg-gray-500 rounded-sm cursor-grab active:cursor-grabbing focus:outline-none focus:ring-2 focus:ring-blue-500"
           onMouseDown={handleThumbDrag}
-          onKeyDown={handleKeyDown}
+          aria-label="Drag to scroll horizontally"
         />
       </div>
     </div>

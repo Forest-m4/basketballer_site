@@ -27,12 +27,16 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
       )}
     >
       <div
-        className="mx-auto flex items-center gap-10"
+        className="mx-auto flex items-center justify-between" // changed from gap-10 to justify-between
         style={{ padding: "0 80px" }}
       >
         <HeaderLogo textColor={textColor} titleColor={logoTitleColor} />
         <HeaderNav textColor={textColor} />
-        <HeaderCart textColor={textColor} />
+        <div className="-translate-x-28">
+          {" "}
+          {/* Added wrapper with left shift */}
+          <HeaderCart textColor={textColor} />
+        </div>
       </div>
     </header>
   );

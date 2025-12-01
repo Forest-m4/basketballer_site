@@ -24,6 +24,8 @@ const typography = tv({
       "12-300": "text-[12px] font-light",
       "12-400": "text-[12px] font-normal",
       "12-700": "text-[12px] font-bold",
+      "13-700": "text-[13px] font-bold",
+      "11-700": "text-[11px] font-bold",
       "14-700": "text-[14px] font-bold",
       "15-400": "text-[15px] font-normal",
       "16-400": "text-[16px] font-normal",

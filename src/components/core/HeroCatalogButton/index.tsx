@@ -1,4 +1,5 @@
 import HeroButton from "../../ui/HeroButton";
+import Typography from "../../ui/Typography";
 import React from "react";
 
 interface HeroCatalogButtonProps
@@ -19,7 +20,9 @@ const HeroCatalogButton: React.FC<HeroCatalogButtonProps> = ({
       className={className}
       {...props}
     >
-      {children}
+      <Typography variant="16-700" color="white">
+        {children}
+      </Typography>
     </HeroButton>
   );
 };

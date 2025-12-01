@@ -1,21 +1,31 @@
 import React from "react";
 import Typography from "../../components/ui/Typography";
-import HeaderNavItem from "../../components/core/HeaderNavItem";
 
 const HotSection = () => {
+  const menuItems = ["Все", "Мячи", "Кроссовки", "Майки", "Шорты"];
+
   return (
-    <section className="w-full py-10 px-20 font-montserrat flex items-center gap-6">
+    <section className="w-full py-10 px-20 flex items-center gap-6 mt-20">
       <Typography type="h2" variant="25-900">
         Горячие поступления
       </Typography>
 
-      <ul className="flex gap-16 items-center list-none p-0 m-0 ml-14">
-        <HeaderNavItem text="Все" textColor="secondary" />
-        <HeaderNavItem text="Мячи" textColor="secondary" />
-        <HeaderNavItem text="Кроссовки" textColor="secondary" />
-        <HeaderNavItem text="Майки" textColor="secondary" />
-        <HeaderNavItem text="Шорты" textColor="secondary" />
-      </ul>
+      <nav>
+        <ul className="flex gap-16 list-none p-0 m-0 ml-14">
+          {menuItems.map((item) => (
+            <li key={item}>
+              <Typography
+                type="a"
+                variant="15-400"
+                color="secondary"
+                className="cursor-pointer transition-colors duration-200 hover:text-primary"
+              >
+                {item}
+              </Typography>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </section>
   );
 };

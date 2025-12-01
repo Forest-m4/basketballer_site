@@ -12,7 +12,7 @@ const button = tv({
       lg: "px-8 py-4 text-lg",
       xl: "px-10 py-5 text-xl",
       hero: "w-[230px] h-[60px] text-[16px]",
-      header: "w-[140px] h-[30px] text-[14px]", // Меняем на 14px
+      header: "w-[130px] h-[30px] text-[14px]", // Меняем на 14px
     },
     buttonColor: {
       primary: "bg-primary hover:bg-primary/90 active:bg-primary/80 text-white",
@@ -81,7 +81,7 @@ const HeroButton: React.FC<HeroButtonProps> = ({
       {...props}
       className={twMerge(button({ size, buttonColor, variant }), className)}
     >
-      <Typography type="span" variant="14-700" color={getTextColor()}>
+      <Typography type="span" color={getTextColor()}>
         {children}
       </Typography>
     </button>

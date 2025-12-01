@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import SliderContainer from "../../components/core/SliderContainer";
-import SliderTrack from "../../components/core/SliderTrack";
+import SliderTrack from "../../components/core/ProductSliderTrack";
 import SliderArrows from "../../components/core/SliderArrows";
 import { products } from "../../lib/products";
 

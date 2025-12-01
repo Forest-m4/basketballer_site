@@ -14,7 +14,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <div className="w-[270px] h-[417px] bg-white rounded-lg shadow-md p-1 flex flex-col gap-4">
       <div className="pt-2"></div>
 
-      {/* Заголовок с фиксированной высотой */}
       <div className="h-10 flex items-center justify-center">
         <Typography
           type="h3"
@@ -34,7 +33,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         />
       </div>
 
-      {/* Описание с фиксированной высотой */}
       <div className="h-[50px] flex items-center justify-center">
         <Typography
           type="p"
@@ -46,10 +44,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </Typography>
       </div>
 
-      {/* Блок с ценами с фиксированной высотой */}
-      <div className="relative flex justify-between items-end mt-auto mb-6 px-6 h-[50px]">
+      <div className="relative flex justify-between items-end mt-auto mb-6 px-6 h-[60px]">
         {discount && (
-          <div className="absolute left-1/2 top-5 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-1/2 top-3 transform -translate-x-1/2 -translate-y-1/2">
             <Typography
               type="span"
               variant="14-400"
@@ -62,7 +59,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         )}
 
         <div className="flex flex-col gap-1">
-          <Typography type="span" variant="18-700" className="text-[#3145ff]">
+          <Typography type="span" variant="18-700" className="text-primary">
             {price} ₽
           </Typography>
         </div>
